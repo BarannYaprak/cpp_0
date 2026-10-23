@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 21:01:27 by byaprak           #+#    #+#             */
-/*   Updated: 2026/10/22 13:12:36 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/10/22 19:22:16 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,13 @@ Contact::Contact(void)
 		nickname(""),
 		phone_number(""),
 		darkest_secret("")
-{	
+{
+	
+    this->args[0] = &this->firstname;
+    this->args[1] = &this->lastname;
+    this->args[2] = &this->nickname;
+    this->args[3] = &this->phone_number;
+    this->args[4] = &this->darkest_secret;
 }
 
 Contact::~Contact(void)

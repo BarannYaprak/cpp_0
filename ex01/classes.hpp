@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 21:04:36 by byaprak           #+#    #+#             */
-/*   Updated: 2026/10/22 01:59:41 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/10/22 18:59:52 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,7 @@ class Contact
 		std::string nickname;
 		std::string phone_number;
 		std::string darkest_secret;
-		std::string* args[5] =
-		{
-			&this->firstname,
-			&this->lastname,
-			&this->nickname,
-			&this->phone_number,
-			&this->darkest_secret,
-		};
+		std::string* args[5];
 	public:
 		Contact();
 		int add_person();
