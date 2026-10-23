@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 21:43:29 by byaprak           #+#    #+#             */
-/*   Updated: 2026/10/22 14:43:07 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/10/22 22:21:49 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,19 @@ int PhoneBook::print_all()
 		<< '|' << std::setw(10) << "Phone Number" << '|' << std::endl;
 	std::cout <<"----------|----------|----------|----------|------------|"
 		<< std::endl;
-	for (int i = 0; i < count; i++)
+	for (int i = 0; i < count && i < 8; i++)
 		members[i].print_member(i);
 	std::cout << "Please enter the index of the contact to display: ";
 	if (!std::getline(std::cin, line))
 		return (0);
 	else if (line.length() == 1)
 	{
-		if (std::isdigit(line[0]) && line[0] < '9')
-			members[line[0]].print_detail(line[0]);
+		if (std::isdigit(line[0]) && line[0] < '8')
+			members[line[0] - '0'].print_detail(line[0] - '0');
 		else
 			std::cout << "Invalid index!\n";
 	}
+	else if (line.length() != 1)
+		std::cout << "Invalid index!\n";
 	return (1);
 }
-
