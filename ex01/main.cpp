@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 23:00:16 by byaprak           #+#    #+#             */
-/*   Updated: 2026/10/22 02:11:51 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/10/22 22:18:20 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int main()
 		{
 			if (std::cin.eof())
 			{
-				std::cout << "EOF detected. Exiting...";
+				std::cout << "EOF detected. Exiting..." << std::endl;
 				return (1);
 			}
 		}
 		else if (line.empty())
-			std::cout << "Field cannot be empty. Please try again.";
+			std::cout << "Field cannot be empty. Please try again." << std::endl;
 		else if (line == "ADD")
 		{
 			if (!book.add_contact())
