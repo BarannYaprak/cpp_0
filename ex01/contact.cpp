@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 21:01:27 by byaprak           #+#    #+#             */
-/*   Updated: 2026/10/22 19:22:16 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/10/30 21:33:16 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Contact::~Contact(void)
 
 int Contact::add_person()
 {
+	int			j = 0;
 	std::string line;
 	std::string prompts[5] =
 	{
@@ -55,6 +56,15 @@ int Contact::add_person()
 		}
 		else if (line.empty())
 			std::cout << "Field cannot be empty. Please try again.";
+		if (i == 3)
+		{
+			while (line[j])
+			{
+				if (!std::isdigit(line[i]))
+					std::cout << "Please enter a number" << std::endl;
+				j++;
+			}
+		}
 		else
 		{
 			*args[i] = line;		
@@ -87,8 +97,8 @@ void Contact::print_detail(int index)
 		<< '|' << std::setw(10) << "Last Name"
 		<< '|' << std::setw(10) << "Nickname" 
 		<< '|' << std::setw(10) << "Phone Number" 
-		<< '|' << std::setw(10) << "Darkest secret" << std::endl;
-	std::cout <<"---------------------------------------------------------"
+		<< "|" << std::setw(10) << "Darkest secret" << std::endl;
+	std::cout <<"------------------------------------------------------------------------------"
 		<< std::endl;
 	std::cout << std::setw(10) << index 
 		<< '|' << std::setw(10) << firstname

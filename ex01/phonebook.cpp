@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 21:43:29 by byaprak           #+#    #+#             */
-/*   Updated: 2026/10/22 22:21:49 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/10/30 15:35:50 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int PhoneBook::print_all()
 		<< '|' << std::setw(10) << "First Name"
 		<< '|' << std::setw(10) << "Last Name"
 		<< '|' << std::setw(10) << "Nickname" 
-		<< '|' << std::setw(10) << "Phone Number" << '|' << std::endl;
-	std::cout <<"----------|----------|----------|----------|------------|"
+		<< "|   " << std::setw(10) << "Phone Number" << std::endl;
+	std::cout <<"-----------------------------------------------------------"
 		<< std::endl;
 	for (int i = 0; i < count && i < 8; i++)
 		members[i].print_member(i);
