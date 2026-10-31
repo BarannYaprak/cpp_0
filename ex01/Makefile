@@ -3,10 +3,12 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 CPP = c++
 SRC = contact.cpp \
 		phonebook.cpp \
+		add_person.cpp \
 		main.cpp
 
 OBJ = contact.o \
 		phonebook.o \
+		add_person.o \
 		main.o
 
 all:$(NAME)
