@@ -1,6 +1,6 @@
 NAME = PhoneBook
-CFLAGS = -Wall -Werror -Wextra -std=c++98
-CPP = c++
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXX = c++
 SRC = contact.cpp \
 		phonebook.cpp \
 		add_person.cpp \
@@ -14,10 +14,10 @@ OBJ = contact.o \
 all:$(NAME)
 
 $(NAME):$(OBJ)
-	$(CPP) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 $(OBJ):$(SRC)
-	$(CPP) $(CFLAGS) -c $(SRC)
+	$(CXX) $(CXXFLAGS) -c $(SRC)
 
 clean:
 	rm -rf $(OBJ)
@@ -28,7 +28,7 @@ fclean:clean
 re: fclean all
 
 debug:fclean
-	$(CPP) $(CFLAGS) -fsanitize=address -g3 -c $(SRC)
-	$(CPP) $(CFLAGS) $(OBJ) -fsanitize=address -g -o $(NAME)
+	$(CXX) $(CXXFLAGS) -fsanitize=address -g3 -c $(SRC)
+	$(CXX) $(CXXFLAGS) $(OBJ) -fsanitize=address -g -o $(NAME)
 
 

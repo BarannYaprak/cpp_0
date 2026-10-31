@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 21:01:27 by byaprak           #+#    #+#             */
-/*   Updated: 2026/10/31 01:42:30 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/10/31 17:55:52 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,16 @@ Contact::~Contact(void)
 
 void Contact::print_member(int index)
 {
-	std::cout << std::setw(10) << index << '|';
+	std::cout << YELLOW << std::setw(10) << index  << RESET << GREEN << '|' << RESET;
 	for (int i = 0; i < 4; i++)
 	{
-		if ((*args[i]).length() > 10)
-			std::cout << (*args[i]).substr(0, 9) + '.';
+		if (i == 3)
+			std::cout << YELLOW << "  " << (*args[i]).substr(0, 9) + '.' << RESET;
+		else if ((*args[i]).length() > 10)
+			std::cout << YELLOW << (*args[i]).substr(0, 9) + '.' << RESET;
 		else
-			std::cout << std::setw(10) << *args[i];
-		std::cout << "|";
+			std::cout << YELLOW << std::setw(10) << *args[i] << RESET;
+		std::cout << GREEN << "|" << RESET;
 		if(i == 3)
 			std::cout << '\n';
 	}
@@ -48,10 +50,10 @@ void Contact::print_member(int index)
 
 void Contact::print_detail(int index)
 {
-	std::cout << "Index: " << index << '\n'
-		<< "First Name: " << firstname << '\n'
-		<< "Last Name: " << lastname << '\n'
-		<< "Nickname: "  << nickname << '\n'
-		<< "Phone Number: "  << phone_number << '\n'
-		<< "Darkest secret: " << darkest_secret << std::endl;
+	std::cout << YELLOW << "Index: " << CYAN << index << '\n'
+		<< YELLOW << "First Name: " << CYAN << firstname << '\n'
+		<< YELLOW << "Last Name: " << CYAN << lastname << '\n'
+		<< YELLOW << "Nickname: "  << CYAN << nickname << '\n'
+		<< YELLOW << "Phone Number: "  << CYAN << phone_number << '\n'
+		<< YELLOW << "Darkest secret: " << CYAN << darkest_secret << RESET << std::endl;
 }

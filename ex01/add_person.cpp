@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 23:10:51 by byaprak           #+#    #+#             */
-/*   Updated: 2026/10/31 02:01:08 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/10/31 18:08:42 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ int Contact::add_person()
 		{
 			if (std::cin.eof())
 			{
-				std::cout << "EOF detected. Exiting...";
+				std::cout << PURPLE << "EOF detected. Exiting..." << RESET << std::endl;
 				return (0);
 			}
 		}
 		else if (line.empty())
-			std::cout << "Field cannot be empty. Please try again.";
+			std::cout << PURPLE << "Field cannot be empty. Please try again." << RESET << std::endl;
 		else if (i == 0)
 			i += set_string(line, args[i]);
 		else if (i == 1)
@@ -57,19 +57,19 @@ static int	set_string(std::string line, std::string* args)
 		j++;
 	if (!line[j])
 	{	
-		std::cout << "Please enter alphabetic characters" << std::endl;
+		std::cout << PURPLE << "Please enter alphabetic characters" << RESET << std::endl;
 		return (0);
 	}
 	while (line[i])
 	{
 		if (line.length() == 1 && line[i] == ' ')
 		{
-				std::cout << "Please enter alphabetic characters" << std::endl;
+				std::cout << PURPLE << "Please enter alphabetic characters" << RESET << std::endl;
 				return (0);
 		}
 		if (!std::isalpha(line[i]) && line[i] != ' ')
 		{	
-				std::cout << "Please enter alphabetic characters" << std::endl;
+				std::cout << PURPLE << "Please enter alphabetic characters" << RESET<< std::endl;
 				return (0);	
 		}
 		i++;	
@@ -80,6 +80,15 @@ static int	set_string(std::string line, std::string* args)
 
 static int	set_nickname(std::string line, std::string* args)
 {
+	int	j = 0;
+
+	while(line[j] == ' ')
+		j++;
+	if (!line[j])
+	{	
+		std::cout << PURPLE << "Please enter alphabetic characters" << RESET << std::endl;
+		return (0);
+	}
 	*args = line;
 	return (1);
 }
@@ -102,7 +111,7 @@ static int	set_number(std::string line, std::string* args)
 				i++;
 				continue;
 			}
-			std::cout << "Please enter a valid number" << std::endl;
+			std::cout << PURPLE << "Please enter a valid number" << RESET << std::endl;
 			return (0);	
 		}
 		i++;	
@@ -121,6 +130,6 @@ static void print_prompt(int i)
 		"Please enter the Phone Number",
 		"Please enter the Darkest Secret"
 	};
-	std::cout << prompts[i] << ": ";
+	std::cout << YELLOW << prompts[i] << ": " << RESET;
 }
 //+90530 109 35 03

@@ -6,13 +6,21 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 21:04:36 by byaprak           #+#    #+#             */
-/*   Updated: 2026/10/30 23:17:29 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/10/31 17:57:54 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include<iostream>
 #include<iomanip>
+
+#define RED		"\033[0;31m"
+#define YELLOW	"\033[0;33m"
+#define CYAN	"\033[0;36m"
+#define GREEN	"\033[0;32m"
+#define RESET	"\033[0m"
+#define PURPLE	"\033[0;35m"
+
 class Contact
 {
 	private:
